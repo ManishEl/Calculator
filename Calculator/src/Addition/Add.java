@@ -15,13 +15,12 @@ public class Add {
 			return 0;
 		} 
 		
+		for(int i=0;i<a.length;i++)
+		{
+			int one=Integer.parseInt(a[i]);
+			sum=sum+one;
+		}
 		
-		int one=Integer.parseInt(a[0]);
-		int two=Integer.parseInt(a[1]);
-		
-		
-		
-		sum=one+two;
 		return sum;
 	}
 	
