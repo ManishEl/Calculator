@@ -13,19 +13,11 @@ public class Add {
 	String number;
 	
 	 
-	public int addition(StringBuilder numbers)
+	public int addition(String[] a)
 	{
 		
 		
-		 
-		String aq=numbers.toString();
-		
-		String w=aq.replaceAll("\\s", "");
-		
-		//w.split("\\[");
-		//w.replaceAll("\\]", "");
-		
-	String[] a=w.trim().split(",");
+	
 
 	
 	
@@ -45,6 +37,7 @@ public class Add {
 	public static void main(String[] args)
 	{
 		int sum=0;
+		ArrayList<Integer> n=new ArrayList<>();
 		Scanner s=new Scanner(System.in);
 		String read="";
 		StringBuilder numbers=new StringBuilder();
@@ -58,16 +51,50 @@ public class Add {
 	        break;  //exit the loop
 	    }
 		
+		
+		
 		numbers.append(read);
 		}
 		
+		 
+			String aq=numbers.toString();
+			
+			String w=aq.replaceAll("\\s", "");
+			
+			//w.split("\\[");
+			//w.replaceAll("\\]", "");
+			
+		String[] an=w.trim().split("[,;%$#@!]+");
 		
+		try
+		{
+			for(int i=0;i<an.length;i++)
+			{
+				if(Integer.parseInt(an[i])<0)
+				{
+					n.add(Integer.parseInt(an[i]));
+				}
+			}
+			for(int i=0;i<n.size();i++)
+			{
+				throw new Exception("number is negative"+n);
+			}
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		finally
+		{
+			
+		}
 		
 		
 		
 		 Add a=new Add();
 		 
-		 sum=a.addition(numbers);
+		 sum=a.addition(an);
 		 
 		 
 			 System.out.println(sum);
