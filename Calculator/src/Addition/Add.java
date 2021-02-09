@@ -11,102 +11,76 @@ public class Add {
 
 	int sum;
 	String number;
-	
-	 
-	public int addition(String[] a)
-	{
-	
-	
-	  if(a[0].isEmpty() && a[1].isEmpty()) { return 0; }
-	 
-		
-		for(int i=0;i<a.length;i++)
-		{
-			int one=Integer.parseInt(a[i]);
-			
-		if(one>=1000)
-		{
-			sum=sum+0;
+
+	public int addition(String[] a) {
+
+		if (a[0].isEmpty() && a[1].isEmpty()) {
+			return 0;
 		}
-		else
-		{
-			sum=sum+one;
+
+		for (int i = 0; i < a.length; i++) {
+			int one = Integer.parseInt(a[i]);
+
+			if (one >= 1000) {
+				sum = sum + 0;
+			} else {
+				sum = sum + one;
+			}
+
 		}
-			
-		}
-		
+
 		return sum;
 	}
-	
-	public static void main(String[] args)
-	{
-		int sum=0;
-		ArrayList<Integer> n=new ArrayList<>();
-		Scanner s=new Scanner(System.in);
-		String read="";
-		StringBuilder numbers=new StringBuilder();
-		
-		while(s.hasNextLine())
-		{
-			read=s.nextLine();
-			
-		
-		if(read == null || read.isBlank()){ //if the line is empty
-	        break;  //exit the loop
-	    }
-		
-		
-		
-		numbers.append(read);
+
+	public static void main(String[] args) {
+		int sum = 0;
+		ArrayList<Integer> n = new ArrayList<>();
+		Scanner s = new Scanner(System.in);
+		String read = "";
+		StringBuilder numbers = new StringBuilder();
+
+		while (s.hasNextLine()) {
+			read = s.nextLine();
+
+			if (read == null || read.isBlank()) { // if the line is empty
+				break; // exit the loop
+			}
+
+			numbers.append(read);
 		}
-		
-		 
-			String aq=numbers.toString();
-			
-			String w=aq.replaceAll("\\s", "");
-			
-			//w.split("\\[");
-			//w.replaceAll("\\]", "");
-			
-		String[] an=w.trim().split("[,;%$#@!*]+");
-		
-		try
-		{
-			for(int i=0;i<an.length;i++)
-			{
-				if(Integer.parseInt(an[i])<0)
-				{
+
+		String aq = numbers.toString();
+
+		String w = aq.replaceAll("\\s", "");
+
+		// w.split("\\[");
+		// w.replaceAll("\\]", "");
+
+		String[] an = w.trim().split("[,;%$#@!*]+");
+
+		try {
+			for (int i = 0; i < an.length; i++) {
+				if (Integer.parseInt(an[i]) < 0) {
 					n.add(Integer.parseInt(an[i]));
 				}
 			}
-			for(int i=0;i<n.size();i++)
-			{
-				throw new Exception("number is negative"+n);
+			for (int i = 0; i < n.size(); i++) {
+				throw new Exception("number is negative" + n);
 			}
-			
-		}
-		catch(Exception e)
-		{
+
+		} catch (Exception e) {
 			System.out.println(e);
 			System.exit(0);
+		} finally {
+
 		}
-		finally
-		{
-			
-		}
-		
-		
-		
-		 Add a=new Add();
-		 
-		 sum=a.addition(an);
-		 
-		 
-			 System.out.println(sum);
-			
-			 
-		 
-		
+
+		Add a = new Add();
+
+		sum = a.addition(an);
+
+		System.out.println(sum);
+
 	}
-	
+
 }
