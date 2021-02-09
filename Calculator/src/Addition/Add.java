@@ -1,19 +1,37 @@
 package Addition;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Add {
 
 	int sum;
 	String number;
 	
-	public int addition(String numbers)
+	 
+	public int addition(StringBuilder numbers)
 	{
-		String[] a=numbers.trim().split(",");
-		if(a[0].isEmpty() && a[1].isEmpty())
-		{
-			return 0;
-		} 
+		
+		
+		 
+		String aq=numbers.toString();
+		
+		String w=aq.replaceAll("\\s", "");
+		
+		//w.split("\\[");
+		//w.replaceAll("\\]", "");
+		
+	String[] a=w.trim().split(",");
+
+	
+	
+	
+	  if(a[0].isEmpty() && a[1].isEmpty()) { return 0; }
+	 
 		
 		for(int i=0;i<a.length;i++)
 		{
@@ -28,18 +46,35 @@ public class Add {
 	{
 		int sum=0;
 		Scanner s=new Scanner(System.in);
-		String numbers=s.nextLine();
+		String read="";
+		StringBuilder numbers=new StringBuilder();
 		
-		if(numbers.isBlank())
+		while(s.hasNextLine())
 		{
-			System.out.println(sum);
-			System.exit(0);
+			read=s.nextLine();
+			
+		
+		if(read == null || read.isBlank()){ //if the line is empty
+	        break;  //exit the loop
+	    }
+		
+		numbers.append(read);
 		}
 		
-		Add a=new Add();
-		sum=a.addition(numbers);
 		
-		System.out.println(sum);
+		
+		
+		
+		 Add a=new Add();
+		 
+		 sum=a.addition(numbers);
+		 
+		 
+			 System.out.println(sum);
+			
+			 
+		 
+		
 	}
 	
 }
