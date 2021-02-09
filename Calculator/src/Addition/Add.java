@@ -68,7 +68,7 @@ public class Add {
 			//w.split("\\[");
 			//w.replaceAll("\\]", "");
 			
-		String[] an=w.trim().split("[,;%$#@!]+");
+		String[] an=w.trim().split("[,;%$#@!*]+");
 		
 		try
 		{
@@ -88,6 +88,7 @@ public class Add {
 		catch(Exception e)
 		{
 			System.out.println(e);
+			System.exit(0);
 		}
 		finally
 		{
