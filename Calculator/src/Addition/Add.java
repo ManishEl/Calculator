@@ -15,11 +15,6 @@ public class Add {
 	 
 	public int addition(String[] a)
 	{
-		
-		
-	
-
-	
 	
 	
 	  if(a[0].isEmpty() && a[1].isEmpty()) { return 0; }
@@ -28,7 +23,16 @@ public class Add {
 		for(int i=0;i<a.length;i++)
 		{
 			int one=Integer.parseInt(a[i]);
+			
+		if(one>=1000)
+		{
+			sum=sum+0;
+		}
+		else
+		{
 			sum=sum+one;
+		}
+			
 		}
 		
 		return sum;
