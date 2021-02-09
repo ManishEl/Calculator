@@ -47,6 +47,7 @@ public class Add {
 			}
 
 			numbers.append(read);
+			numbers.append("a");
 		}
 
 		String aq = numbers.toString();
@@ -56,7 +57,7 @@ public class Add {
 		// w.split("\\[");
 		// w.replaceAll("\\]", "");
 
-		String[] an = w.trim().split("[,;%$#@!*]+");
+		String[] an = w.trim().split("[,;%$#@!*a]+");
 
 		try {
 			for (int i = 0; i < an.length; i++) {
